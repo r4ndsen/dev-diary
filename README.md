@@ -67,7 +67,7 @@ function diary() {
     $editor "$diaryRepoPath"
 
     local yesterdayFile="$diaryRepoPath/$(date -v-1d +'%Y/%m - %B')/$(date -v-1d +'%d').md"
-    if [[ -f "$yesterdayFile" && ! -s "$yesterdayFile" ]]; then
+    if [[ -s "$yesterdayFile" ]]; then
         $editor "$yesterdayFile"
     fi
 
